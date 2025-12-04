@@ -1,0 +1,1 @@
+from .hf_local_embeddings import HFLocalEmbeddings
