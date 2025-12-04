@@ -4,6 +4,11 @@ from huggingface_service import HFLocalEmbeddings
 app = Flask(__name__)
 hf = HFLocalEmbeddings()
 
+
+@app.route("/", methods=["GET"])
+def home():
+    return {"status": "running", "service": "hf-embeddings-api"}
+
 @app.route("/embed", methods=["POST"])
 def embed():
     data = request.json
